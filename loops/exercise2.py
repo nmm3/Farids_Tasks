@@ -20,33 +20,35 @@
 # Солнечное ядро
 # Поздравляю!
 
-def SeekI (amin, amax, x):
+def seek_the_distanse(criminal_numb, victim_numb):
     i = 0
-    while (amin != x) == (amax != x):
-        amin -= 1
-        amax += 1
+    criminal_numb_left = criminal_numb
+    criminal_numb_right = criminal_numb
+    while (criminal_numb_left != x) == (criminal_numb_right != x):
+        criminal_numb_left -= 1
+        criminal_numb_right += 1
         i += 1
     return i
 
-def NonStop (x):
-    amin = int(input('Ну же... '))
-    amax = amin
-    while amin != x:
-        i = SeekI(amin, amax, x)
+
+def distance_link(x):
+    criminal_numb = int(input('Ну же... '))
+    while criminal_numb != victim_numb:
+        i = seek_the_distanse(criminal_numb, victim_numb)
         if i < 200:
-            print ('Горячо.')
+            print('Горячо.')
         elif i < 500:
-            print ('Прохладно.')
+            print('Прохладно.')
         else:
-            print ('Холодно.')
-        amin = int(input('Еще раз... '))
-        amax = amin
+            print('Холодно.')
+        criminal_numb = int(input('Еще раз... '))
     print('Congrats!')
 
+
 def solve():
-    x = int(input('Загадай число: '))
+    victim_numb = int(input('Загадай число: '))
     print('А теперь угадай, какое число ты загадал!')
-    NonStop(x)
+    distance_link (x)
 
 
 if __name__ == '__main__':

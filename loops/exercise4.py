@@ -27,19 +27,16 @@
 # 997 является простым числом
 
 def solve():
-
     x = int(input('Загадай число: '))
     boop = False
-
     for i in range(2, x):
         if bool(x % i) != True:
             boop = True
-
-    if boop == True:
+            break
+    if boop:
         print('Непростое.')
     else:
         print('Простое.')
-
 
 
 if __name__ == '__main__':

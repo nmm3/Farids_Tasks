@@ -18,21 +18,20 @@
 # 1 1 2 3 5 8 13 21 34
 
 def solve():
-    aint = 0
-    astr = '1'
-    x = int(input('Введите нужное число: '))
+    fibonacci_numbers = '1'
+    number_of_numbers = int(input('Введите нужное число: '))
 
-    if x == 1:
+    if number_of_numbers == 1:
         print('1')
     else:
-        pre1 = 0
-        pre2 = 1
-        for i in range(0, x-1):
-            aint = pre1 + pre2
-            astr += ' ' + str(aint)
-            pre1 += pre2
-            pre1, pre2 = pre2, pre1
-        print(astr)
+        pre_pre_fibonacci_value = 0
+        pre_fibonacci_value = 1
+        for i in range(0, number_of_numbers-1):
+            fibonacci_value = pre_fibonacci_value + pre_pre_fibonacci_value
+            fibonacci_numbers += ' ' + str(fibonacci_value)
+            pre_fibonacci_value, pre_pre_fibonacci_value = pre_pre_fibonacci_value, pre_fibonacci_value
+            pre_fibonacci_value += pre_pre_fibonacci_value
+        print(fibonacci_numbers)
 
 
 if __name__ == '__main__':
